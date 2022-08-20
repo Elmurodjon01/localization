@@ -1,3 +1,4 @@
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,9 @@ void main() async {
       child: MyApp(),
       supportedLocales: const [
         Locale('en', 'US'),
-        Locale('ko', 'KR'),
-        Locale('ja', 'JP'),
+        Locale('fr', 'FR'),
+        Locale('ru', 'RU'),
+        Locale('uz', 'UZ'),
       ],
       path: 'assets/translations',
       fallbackLocale: Locale('en', 'US'),
@@ -55,7 +57,7 @@ class _MainState extends State<Main> {
             const SizedBox(
               height: 50,
             ),
-            const Text('flutter').tr(),
+            const Text('welcome').tr(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,20 +68,26 @@ class _MainState extends State<Main> {
                   },
                   child: const Text('English'),
                 ),
-
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.red),
                   onPressed: () {
-                    context.locale = Locale('ko', 'KR');
+                    context.locale = Locale('ru', 'RU');
                   },
-                  child: const Text('Korean'),
+                  child: const Text('Russian'),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(primary: Colors.blue),
                   onPressed: () {
-                    context.locale = Locale('ja', 'JP');
+                    context.locale = Locale('uz', 'UZ');
                   },
-                  child: const Text('Korean'),
+                  child: const Text('Uzbek'),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.orangeAccent),
+                  onPressed: () {
+                    context.locale = Locale('fr', 'FR');
+                  },
+                  child: const Text('Franch'),
                 ),
               ],
             ),
@@ -92,4 +100,3 @@ class _MainState extends State<Main> {
     );
   }
 }
-
